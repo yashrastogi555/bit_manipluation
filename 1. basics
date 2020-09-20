@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,i,j,k,m;
+    cin>>n;
+    cin>>i>>j>>k>>m;
+    int m1=0,m2=0,m3=0,m4=0;
+    m1=(1<<i);
+    m2=~(1<<j);
+    m3=(1<<k);
+    
+    cout<< (n | m1)<<endl;
+    cout<< (n & m2)<<endl;
+    cout<< (n ^ m3)<<endl;
+    if((n>>m)&1)
+    cout<<"true";
+    else
+    cout<<"false";
+}
