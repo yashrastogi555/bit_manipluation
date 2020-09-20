@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+vector<int>arr(n,0);
+map<int,vector<string>>m;
+int minxor=INT_MAX;
+
+ for(int i=0;i<n;i++)
+ {
+     int a;
+     cin>>a;
+    arr[i]=a;
+ 
+ }
+ sort(arr.begin(),arr.end());
+ 
+ int i;
+ for(i=0;i<(n-1);i++)
+ {
+     int prod=(arr[i]^arr[i+1]);
+     if(prod < minxor)
+     {
+         minxor=prod;
+         string ans=(string)(to_string(arr[i])+", "+to_string(arr[i+1]));
+         m[minxor].push_back(ans);
+     }
+     else if(prod == minxor)
+     {
+         string ans=(string)(to_string(arr[i])+", "+to_string(arr[i+1]));
+         m[minxor].push_back(ans);
+     }
+     else
+     continue;
+ }
+
+    for(auto k: m[minxor])
+    cout<<k<<endl;
+}
