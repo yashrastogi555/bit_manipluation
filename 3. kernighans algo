@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    //inbuilt function used here
+    //cout<<__builtin_popcount(n);
+    
+    //implementation
+    
+    int count =0,rsbm=0;
+    while(n !=0 )
+    
+    {
+    rsbm = (n& -n);
+    n-=rsbm;
+    count++;
+    
+    }
+    cout<<count;
+    
+}
+
+
